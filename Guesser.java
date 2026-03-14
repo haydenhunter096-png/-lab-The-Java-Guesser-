@@ -4,8 +4,9 @@ public class Guesser {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
         int choice = -1;
+
+        try (Scanner input = new Scanner(System.in)) {
 
         while (choice != 0) {
 
@@ -83,6 +84,6 @@ public class Guesser {
             System.out.println();
         }
 
-        input.close();
+        }
     }
 }
