@@ -1,37 +1,26 @@
-# -lab-The-Java-Guesser-
-```
-Program: Guesser
+Program: Java Guesser
 
-Main idea:
-- Show a menu (0: Exit, 1: Human Guesser, 2: Computer Guesser).
-- Repeat until user chooses 0:
-    - Read validated menu choice (0-2).
-    - If 1: run humanGuesser.
-    - If 2: run computerGuesser.
-    - If 0: exit program.
+Menu Algorithm
+1. Display menu options (0 exit, 1 human guesser, 2 computer guesser)
+2. Read user choice
+3. If choice = 1 run human guesser
+4. If choice = 2 run computer guesser
+5. Repeat until choice = 0
 
-humanGuesser:
-- Generate secret integer between 1 and 100.
-- attempts = 0
-- Loop:
-    - attempts++
-    - Prompt user: "<attempts>) Please enter a number: "
-    - Read integer (validate input)
-    - If guess < secret: print "too low..."
-    - Else if guess > secret: print "too high..."
-    - Else: print "got it!" and "Very good!" and return to menu
+Human Guesser Algorithm
+1. Generate random number between 1 and 100
+2. Ask user to guess number
+3. If guess < number → print too low
+4. If guess > number → print too high
+5. If guess == number → print got it
+6. Count attempts
+7. Repeat until correct
 
-computerGuesser (binary search):
-- low = 1, high = 100, attempts = 0
-- Loop while low <= high:
-    - attempts++
-    - guess = floor((low + high) / 2)
-    - Print "<attempts>) I guess <guess>"
-    - Prompt user: "Too (H)igh, too (L)ow, or (C)orrect? "
-    - Read response (H/L/C), case-insensitive, validated
-    - If response == 'C': print "Very good!" and return to menu
-    - If response == 'H': high = guess - 1
-    - If response == 'L': low = guess + 1
-    - If low > high: print "Inconsistent answers" and return to menu
-    ```
-    
+Computer Guesser Algorithm
+1. Set low = 1
+2. Set high = 100
+3. Guess midpoint = (low + high)/2
+4. Ask user if guess is high, low, or correct
+5. If high → set high = guess - 1
+6. If low → set low = guess + 1
+7. Repeat until correct
